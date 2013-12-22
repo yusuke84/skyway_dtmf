@@ -1,0 +1,78 @@
+/*!
+字幕付きボイスチャット
+Copyright (c) 2013 NTT Communications Corporation, http://www.ntt.com
+https://github.com/nttcom/peerjs/blob/master/skyway_examples/caption-phone/LICENSE
+*/
+
+button {
+    -webkit-appearance: none;
+    background: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    outline:none;
+}
+#dialPad {
+    position: absolute;
+    left: 0;
+    top: 200px;
+    /* = (50 - 30 - 50 - 60) / 2 */
+
+    width: 100%;
+    height: 100%;
+}
+#dialPad #dialPadInner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+}
+#dialPad table {
+    position: absolute;
+    left: -105px;
+    top: -140px;
+    /* =  - 280 / 2 */
+
+    margin: 0;
+    padding: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 210px;
+    height: 280px;
+}
+#dialPad table tr td {
+    width: 70px;
+    height: 70px;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+}
+#dialPad .number-button {
+    border: 1px solid #707f86;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    font-size: 24px;
+    color: #707f86;
+    -webkit-transition: all 0.5s linear 0s;
+}
+#dialPad .number-button:active {
+    background: #8d8ab5;
+    border-color: #8d8ab5;
+    -webkit-transition: none;
+}
+
+
+/*!
+Original CSS
+*/
+
+#dtmftextarea-container {
+    position: absolute;
+    top: 50px;
+}
+
+#dtmf-text {
+    width: 396px;
+}

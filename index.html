@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<head>
+    <title>DTMF Tones Sender</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="peer.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+
+<div class="row">
+    <div class="col-md-4">
+        <section id="dialPad">
+            <div id="dialPadInner">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <button class="number-button">1</button>
+                        </td>
+                        <td>
+                            <button class="number-button">2</button>
+                        </td>
+                        <td>
+                            <button class="number-button">3</button>
+                        </td>
+                        <td>
+                            <button class="number-button">A</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="number-button">4</button>
+                        </td>
+                        <td>
+                            <button class="number-button">5</button>
+                        </td>
+                        <td>
+                            <button class="number-button">6</button>
+                        </td>
+                        <td>
+                            <button class="number-button">B</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="number-button">7</button>
+                        </td>
+                        <td>
+                            <button class="number-button">8</button>
+                        </td>
+                        <td>
+                            <button class="number-button">9</button>
+                        </td>
+                        <td>
+                            <button class="number-button">C</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="number-button">*</button>
+                        </td>
+                        <td>
+                            <button class="number-button">0</button>
+                        </td>
+                        <td>
+                            <button class="number-button">#</button>
+                        </td>
+                        <td>
+                            <button class="number-button">D</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    <div class="col-md-4">
+        <!-- Text Area -->
+        <section id="dtmftextarea-container">
+            <label>送信したDTMFトーン</label><br>
+            <textarea id="sended-dtmf" cols="50" rows="5" readonly></textarea><br><br>
+        </section>
+        <!-- Audio area -->
+        <section id="audio-container">
+            <audio id="their-audio" autoplay></audio>
+            <audio id="my-audio" muted="true" autoplay></audio>
+        </section>
+    </div>
+    <div class="col-md-4">
+        <section id="controller">
+            <h2>DTMF Tones Sender Powered by SkyWay</h2>
+            <!-- Get local audio stream -->
+            <div id="step1">
+                <p>マイクの利用を許可してください。</p>
+                <div id="step1-error">
+                    <p>マイクにアクセスできません。ブラウザで利用が許可されているか確認して下さい。</p>
+                    <a href="#" class="btn btn-warning btn-lg" id="step1-retry">メディアを再取得</a>
+                </div>
+            </div>
+
+            <!-- Make calls to others -->
+            <div id="step2">
+                <p>貴方のPeerID: <span id="my-id">...</span></p>
+                <label for="contactlist">接続可能なPeerID：</label>
+                <select id="contactlist" name="contact">
+                </select><br>
+                <button class="btn btn-success btn-lg" id="make-call">Call</button>
+            </div>
+
+            <!-- Call in progress -->
+            <div id="step3">
+                <p>接続先：<span id="their-id">...</span></p>
+                <p><a href="#" class="btn btn-danger btn-lg" id="end-call">DTMF TESTを終了する</a></p>
+            </div>
+        </section>
+    </div>
+</div>
+
+</body>
+</html>
